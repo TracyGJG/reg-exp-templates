@@ -1,5 +1,5 @@
 {
-  "name": "regexptemplates",
+  "name": "reg-exp-templates",
   "version": "1.0.0",
   "description": "A small library of functions to facilitate easier use of Regular Expressions in JS",
   "main": "index.js",
