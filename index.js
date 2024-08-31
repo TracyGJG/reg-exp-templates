@@ -1,7 +1,3 @@
-export function escapeRegExp(pattern = '') {
-  return pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
 export function isRegExpPattern(pattern = '') {
   try {
     RegExp(pattern);

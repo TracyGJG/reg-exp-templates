@@ -5,14 +5,21 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage",
-    "watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+    "test": "node --test",
+    "coverage": "node --test --experimental-test-coverage"
   },
   "author": "Tracy-Gregory Gilmore",
   "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TracyGJG/reg-exp-templates.git"
+  },
   "keywords": [
     "RegExp",
     "Regular Expressions"
-  ]
+  ],
+  "homepage": "https://github.com/TracyGJG/reg-exp-templates#readme",
+  "engines": {
+    "node": ">=20.0.0"
+  }
 }
