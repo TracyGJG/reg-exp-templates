@@ -94,3 +94,23 @@ returns:
 ```
 
 ---
+
+## escapeRegExp(<ESCAPED_STRING>) return an ESCAPED_REGEXP_STRING.
+
+Converts an escaped string into a string comparible as a Regular Expression string.
+
+### Example
+
+Input
+
+```js
+'^Hello,\\sWorld!?$';
+```
+
+Output
+
+```js
+'\\^Hello,\\\\sWorld!\\?\\$';
+```
+
+---

@@ -1,7 +1,12 @@
 import { describe, it, test } from 'node:test';
 import assert from 'node:assert/strict';
 
-import { isRegExpPattern, regExpString, regExpTemplate } from './index.js';
+import {
+  isRegExpPattern,
+  regExpString,
+  regExpTemplate,
+  escapeRegExp,
+} from './index.js';
 
 describe('isRegExpPattern', () => {
   test('can reject an empty string', () => {
@@ -87,18 +92,20 @@ describe('regExpTemplate', () => {
 
 describe('escapeRegExp', () => {
   it('can leave an empty string unchanged', () => {
-    assert.equal(escapeRegExp(),'');
+    assert.equal(escapeRegExp(), '');
   });
   it('can leave a normal string unchanged', () => {
-    assert.equal(escapeRegExp('Hello, World!'),'Hello, World!');
+    assert.equal(escapeRegExp('Hello, World!'), 'Hello, World!');
   });
   it('can escape a valid regular expression pattern', () => {
-    assert.equal(escapeRegExp('^Hello,\\sWorld!?$'),
+    assert.equal(
+      escapeRegExp('^Hello,\\sWorld!?$'),
       '\\^Hello,\\\\sWorld!\\?\\$'
     );
   });
   it('can escape an invalid regular expression pattern', () => {
-    assert.equal(escapeRegExp('^[Hello,\\sWorld!?$'),
+    assert.equal(
+      escapeRegExp('^[Hello,\\sWorld!?$'),
       '\\^\\[Hello,\\\\sWorld!\\?\\$'
     );
   });
