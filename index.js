@@ -23,3 +23,7 @@ export function regExpTemplate(regExpFlags = '') {
     return RegExp(regExpPattern, regExpFlags);
   };
 }
+
+export function escapeRegExp(pattern = '') {
+  return pattern.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}

@@ -84,3 +84,22 @@ describe('regExpTemplate', () => {
     assert.equal(result.length, 7);
   });
 });
+
+describe('escapeRegExp', () => {
+  it('can leave an empty string unchanged', () => {
+    assert.equal(escapeRegExp(),'');
+  });
+  it('can leave a normal string unchanged', () => {
+    assert.equal(escapeRegExp('Hello, World!'),'Hello, World!');
+  });
+  it('can escape a valid regular expression pattern', () => {
+    assert.equal(escapeRegExp('^Hello,\\sWorld!?$'),
+      '\\^Hello,\\\\sWorld!\\?\\$'
+    );
+  });
+  it('can escape an invalid regular expression pattern', () => {
+    assert.equal(escapeRegExp('^[Hello,\\sWorld!?$'),
+      '\\^\\[Hello,\\\\sWorld!\\?\\$'
+    );
+  });
+});
