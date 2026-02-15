@@ -15,7 +15,7 @@ isRegExpPattern(); // = false
 isRegExpPattern('['); // = false
 isRegExpPattern('Hello, World!'); // = true
 isRegExpPattern('^Hello,\\sWorld!?$'); // = true
-isRegExpPattern('^[Hello,\\sWorld!?$'); // =  true
+isRegExpPattern('^[Hello,\\sWorld!?$'); // =  false
 ```
 
 ---
